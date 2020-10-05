@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:get_core/get_core.dart';
 
 extension Trans on String {
-  String get tr {
+  String get getTr {
     // Returns the key if locale is null.
     if (Get.locale?.languageCode == null) return this;
 
@@ -41,7 +41,7 @@ extension Trans on String {
   }
 
   String trArgs([List<String> args]) {
-    var key = tr;
+    var key = getTr;
     if (args != null) {
       for (final arg in args) {
         key = key.replaceFirst(RegExp(r'%s'), arg.toString());
